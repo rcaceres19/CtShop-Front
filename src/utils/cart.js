@@ -90,7 +90,7 @@ export const getCartWithData = async (fb) => {
         const productFetch = await fb.db.ref(`/products/${vendor}/${product._id}`).once('value');
         const productData = productFetch.val();
 
-        products.push({ vendor: {...item.vendor}, product: {_id:product._id, ...productData}, qty: product.qty, sizeSelected: product.sizeSelected });
+        products.push({ vendor: {...item.vendor}, product: {_id:product._id, ...productData}, qty: product.qty, sizeSelected: product.sizeSelected, selectedColor: product.selectedColor });
 
       })).then( () => console.log(`All products Fetched for company ${item.vendor.name}`));
     })).then( () => console.log('All data fetched'));

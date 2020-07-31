@@ -53,7 +53,7 @@ class Home extends React.Component {
         <SearchBar/>
         <section className="section">
         <div className="container has-text-centered">
-          <a href="https://admin.catrachosshop.com/" target="_blank" rel="noopener noreferrer"><img src="/banner.jpeg" style={{maxWidth: 800}} alt="Catrachoshop.com"/></a>
+          <a href="https://admin.catrachosshop.com/" target="_blank" rel="noopener noreferrer"><img src="/banner.jpeg" alt="Catrachoshop.com"/></a>
         </div>
         </section>
         <DataSection title="&Uacute;ltimos Agregados" products={[...internals.productos].sort( (a,b) => a.dateAdded - b.dateAdded).slice(0, 10)}/>

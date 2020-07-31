@@ -2,9 +2,10 @@ import React from 'react';
 import ProductPrice from '../productPrice';
 
 const CartItem = props => {
+  console.log(props.data.product);
   const {name, images, descuento:oferta = null, price, _id:productID } = props.data.product;
   const {company:companyName, _id:companyID} = props.data.vendor;
-  const {qty, sizeSelected} = props.data;
+  const {qty, sizeSelected, selectedColor = null} = props.data;
 
   return(
     <>
@@ -20,6 +21,7 @@ const CartItem = props => {
               <br/><div className="tags">
               {sizeSelected && <span className="tag has-text-weight-bold is-light is-warning">Talla: {sizeSelected}</span>}
               <span className="tag has-text-weight-bold is-light is-warning">Cantidad: {qty}</span>
+              {selectedColor && <span className="tag has-text-weight-bold is-light is-warning">Color: {selectedColor}</span>}
               </div>
             </p>
           </div>

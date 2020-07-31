@@ -11,9 +11,9 @@ class AddToCartBtn extends React.Component {
     this.addToCart = this.addToCart.bind(this);
   }
 
-  addToCart(vendor, product, qty, sizeSelected) {
+  addToCart(vendor, product, qty, sizeSelected, selectedColor) {
     const _cart = getFromLocalStorage();
-    const productToAdd = { _id: product._id, qty, sizeSelected };
+    const productToAdd = { _id: product._id, qty, sizeSelected, selectedColor };
 
     _cart['cart'][vendor._id] = _cart['cart'][vendor._id] ? _cart['cart'][vendor._id] : [];
 
@@ -29,13 +29,13 @@ class AddToCartBtn extends React.Component {
   }
 
   render() {
-    const {vendor, product, qty, sizeSelected = false} = this.props;
+    const {vendor, product, qty, sizeSelected = false, selectedColor = false} = this.props;
 
     return(
       <React.Fragment>
         {/* {isOutOfStock && <p className="has-text-centered has-text-danger"><b>Agotado</b></p>} */}
         <div className="buttons is-centered">
-          <button className="button is-danger is-small has-text-weight-bold" onClick={e => this.addToCart(vendor, product, qty, sizeSelected)}>
+          <button className="button is-danger is-small has-text-weight-bold" onClick={e => this.addToCart(vendor, product, qty, sizeSelected, selectedColor)}>
             <span className="icon"><i className="fa fa-cart-plus"/></span> <span>Agregar al Carrito</span>
           </button>
         </div>

@@ -72,7 +72,9 @@ class UserOrdersBase extends React.Component {
                       return(<tr>
                         <th>{i+1}</th>
                         <th><img src={`${product.product.images[0]}`} width="20" alt={product.product.name}/></th>
-                        <td><a href={`/producto/${product.vendor._id}/${product.product._id}`} target="_blank" rel="noopener noreferrer">{product.product.name}</a></td>
+                        <td><a href={`/producto/${product.vendor._id}/${product.product._id}`} target="_blank" rel="noopener noreferrer">
+                          {product.product.name} - <small>{product.sizeSelected ? product.sizeSelected:''}{product.selectedColor ?  ', '+product.selectedColor:''}</small></a>
+                          </td>
                         <td><a href={`/tienda/${product.vendor._id}`} target="_blank" rel="noopener noreferrer">{product.vendor.company}</a></td>
                         <td>{product.shipped ? <span className="tag is-success is-light">Si</span> : <span className="tag is-danger is-light">No</span>}</td>
                         <td>{product.qty}</td>

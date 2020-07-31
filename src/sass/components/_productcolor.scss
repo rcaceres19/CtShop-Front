@@ -1,0 +1,22 @@
+.product-color {
+  width: 30px;
+  height: 30px;
+  // border: 0px solid black;
+  display: inline-block;
+  border-radius: 50%;
+  margin: 3px;
+
+  &:hover {
+    border: 3px solid #f14668;
+    cursor: pointer;
+  }
+
+  &.blanco {
+    border: 1px solid #000;
+  }
+
+  &.selected {
+    border: 3px solid #f14668;
+    cursor: pointer;
+  }
+}

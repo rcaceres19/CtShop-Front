@@ -10,7 +10,12 @@
 
 // Components
 @import 'components/general';
+@import 'components/productcolor';
+@import 'components/comment';
 @import 'components/searchbar';
 @import 'components/productcard';
 @import 'components/cartitem';
 @import "~react-image-gallery/styles/scss/image-gallery.scss";
+
+// Vendor
+// @import 'components/drift';
